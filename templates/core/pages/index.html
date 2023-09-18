@@ -6,6 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    Index
+<table>
+    {% for c in list %}
+        <tr>
+            <td>{{c.papel}}</td>
+            <td>{{c.segmento}}</td>
+            <td>{{c.cotacao}}</td>
+            <td>{{c.d_yield}}</td>
+        </tr>
+    {% endfor %}
+</table>
 </body>
 </html>
