@@ -1,20 +1,47 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "core/css/index.css" %}">
     <title>Document</title>
 </head>
 <body>
-<table>
-    {% for c in list %}
-        <tr>
-            <td>{{c.papel}}</td>
-            <td>{{c.segmento}}</td>
-            <td>{{c.cotacao}}</td>
-            <td>{{c.d_yield}}</td>
-        </tr>
-    {% endfor %}
-</table>
+    <div class="contant">
+        <!--menu-->
+        <header>
+            <div id="index">Menu</div>
+            <div id="salvos">Salvos</div>
+            <div id="login">
+                <a href="">Login</a>
+            </div>
+        </header>
+        <div class="main">
+            <div class="search-container">
+                <input type="text" name="search-text" id="search-text">
+                <button type="Submit">Pesquisar</button>
+            </div>
+            <div class="result">
+                <table>
+                    <tr id="header">
+                        <th>Papel</th>
+                        <th>Segmento</th>
+                        <th>Cotação</th>
+                        <th>D.Y</th>
+                    </tr>
+                    {% for c in list %}
+                    <tr>
+                        <td>{{c.papel}}</td>
+                        <td>{{c.segmento}}</td>
+                        <td>{{c.cotacao}}</td>
+                        <td>{{c.d_yield}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

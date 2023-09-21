@@ -107,7 +107,6 @@ def result():
 
     return tabela
 
-print(result())
 
 #tranformando saida de dados em tabela
 # head = ['PAPEL', 'SEGMENTO', 'COTAÇÃO ATUAL ', 'D.Y']
