@@ -106,14 +106,3 @@ def result():
         tabela.append({'papel':element.papel,'segmento': element.segmento,'cotacao': locale.currency(element.cotacao),'d_yield': f'{locale.str(element.dividend_yield)}%'})
 
     return tabela
-
-
-#tranformando saida de dados em tabela
-# head = ['PAPEL', 'SEGMENTO', 'COTAÇÃO ATUAL ', 'D.Y']
-
-# tabela = []
-
-# for element in resultado:
-#     tabela.append([element.papel, element.segmento, locale.currency(element.cotacao), f'{locale.str(element.dividend_yield)}%'])
-
-# print(tabulate.tabulate(tabela, headers=head, tablefmt='fancy_grid', showindex='always'))
