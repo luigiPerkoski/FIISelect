@@ -35,7 +35,7 @@
             position: absolute;
             right: 16px;
         }
-        .main {
+        main {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -120,10 +120,22 @@
                 <a href="">Login</a>
             </div>
         </header>
-        <div class="main">
+        <main>
             <div class="search-container">
                 <input type="text" name="search-text" id="search-text">
                 <button type="Submit">Pesquisar</button>
+            </div>
+
+            <div class="filter">
+                <section></section>
+                <section></section>
+                <section></section>
+                <section></section>
+                <section></section>
+                <section></section>
+                <section></section>
+                <section></section>
+                <section></section>
             </div>
             
             <div class="result">
@@ -144,7 +156,7 @@
                     {% endfor %}
                 </table>
             </div>
-        </div>
+        </main>
     </div>
     <footer>
         <script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>

@@ -1,7 +1,9 @@
 from django.shortcuts import render, HttpResponse
-from .controller import result
+from .controller import Result
 
-result = result()
+Result.result()
+
+result = Result.tabela_result
 
 def index(request):
 
