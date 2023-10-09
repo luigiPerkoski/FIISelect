@@ -144,5 +144,3 @@ class Result:
 
 
 Result.result()
-
-print(Result.max_result)
