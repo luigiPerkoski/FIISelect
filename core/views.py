@@ -1,17 +1,25 @@
 from django.shortcuts import render, HttpResponse
 from .controller import Result
-from .forms import SaveForm
-
-result = Result.tabela_result
+from .forms import SaveForm, SearchForm
 
 def index(request):
 
+    result = Result.tabela_result
+    response = []
+
     if request.method == 'POST':
-        form = SaveForm(request.POST)
+        form = SearchForm(request.POST)
         if form.is_valid():
-            form.save()
+            query = form.cleaned_data['query']
+            for c in result:
+                if query.upper() in c['papel']:
+                    response.append(c)
+            result = response
+        else:
+            result = Result.tabela_result
     else:
-        form = SaveForm()
+        form = SearchForm()
+        result = Result.tabela_result
 
     context = {'list':result, 'form':form}
     

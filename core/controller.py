@@ -133,13 +133,13 @@ class Result:
 
         for chave, element in elementos.items():
             max_result[f'{chave}'] = max(element)
-            min_result[f'{chave}'] = max(element)
+            min_result[f'{chave}'] = min(element)
         
 
 
             
         cls.max_result = max_result
-        cls.min_result
+        cls.min_result = min_result
         cls.tabela_result = tabela
 
 
