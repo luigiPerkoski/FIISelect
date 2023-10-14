@@ -11,7 +11,6 @@ header{
     display: flex;
     background-color: rgb(250, 204, 21);
     width: 100%;
-    /* border: 1px solid black; */
     padding: 12px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.322);
 }
@@ -19,6 +18,7 @@ div#index, div#salvos, div#login{
     width: fit-content;
     height: fit-content;
     padding: 10px;
+    margin: 0 10px;
     font-size: 20px;
 }
 div#login{
@@ -43,7 +43,6 @@ main {
     height: 50px;
     box-sizing: border-box; 
 }
-
 .search-container form button {
     margin: auto;
     padding: 10px 20px; 
@@ -54,13 +53,10 @@ main {
     border-radius: 0 5px 5px 0;
     height: 50px;
 }
-
-
 .result {
     text-align: center;
     width: 80%;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -83,21 +79,32 @@ tr#header{
 }
 .filter-panel {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px; /* Adjust the gap as needed */
-    /* Add a border around the panel */
-    padding: 10px; /* Add some padding for spacing */
+    grid-template-columns: repeat(6, 1fr); /* Cria 6 colunas iguais */
+    grid-template-rows: repeat(4, 1fr);
+    gap: 5px; 
+    padding: 10px; 
 }
-
-.filter-panel section {
+.filter-panel input {
     text-align: center;
     border: 1px solid #000;
     padding: 10px;
-    margin: 24px 36px ;
+    /* margin: 24px 36px ; */
     border-radius: 10px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.322);
 }
+.filter-panel label{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
 .search-container form{
     display: flex;
+}
+.filter-panel input {
+    width: 70%;
+}
+.filter-panel span{
+    text-align: end;
+    display: grid;
+    align-content: center;
 }

@@ -8,6 +8,7 @@
     <link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'core/css/index.css' %}">
+    <script type="module" src="{% static 'core/js/index.js' %}" defer ></script>
 </head>
 <body>
     <div class="contant">
@@ -22,11 +23,14 @@
             <div class="search-container">
                 <form method="post">
                     {% csrf_token %}
-                    {{form}}
+                    {{search}}
                     <button type="Submit">Pesquisar</button>
                 </form>
             </div>
-            
+            <form class="filter-panel"  action=>
+                {% csrf_token %}
+                {{filter}}
+            </form>
             <div class="result">
                 <table id="emprestimo">
                     <tr id="header">

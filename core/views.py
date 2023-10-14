@@ -5,6 +5,7 @@ from .forms import SaveForm, SearchForm
 def index(request):
 
     result = Result.tabela_result
+    filtro = SaveForm()
     response = []
 
     if request.method == 'POST':
@@ -21,6 +22,6 @@ def index(request):
         form = SearchForm()
         result = Result.tabela_result
 
-    context = {'list':result, 'form':form}
+    context = {'list':result, 'search':form, 'filter':filtro}
     
     return render(request, 'core/pages/index.html', context)
