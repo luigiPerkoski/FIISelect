@@ -27,10 +27,14 @@
                     <button type="Submit">Pesquisar</button>
                 </form>
             </div>
-            <form class="filter-panel"  action=>
+            <form id="form-filter" class="filter-panel" action="{% url 'filter' %}" method="post">
                 {% csrf_token %}
-                {{filter}}
+                {{ filter }}
             </form>
+            <div class="button">
+                <button id="salvar" type="submit">Salvar</button>
+                <button form="form-filter" id="filtrar" type="submit">Filtrar</button>
+            </div>
             <div class="result">
                 <table id="emprestimo">
                     <tr id="header">

@@ -52,7 +52,7 @@ class Result:
     min_result = []
 
     @classmethod
-    def result(cls):
+    def result(cls, estrategia: Estrategia = Estrategia()):
 
         def tratar_porcentagem(porcentagem_str: str):
             return locale.atof(porcentagem_str.split('%')[0])
@@ -96,7 +96,7 @@ class Result:
 
         resultado = []
 
-        estrategia = Estrategia() #aplica estrategia para filtrar os fundos imobiliarios
+        estrategia = estrategia #aplica estrategia para filtrar os fundos imobiliarios
 
         for linha in linhas:
 
@@ -141,6 +141,3 @@ class Result:
         cls.max_result = max_result
         cls.min_result = min_result
         cls.tabela_result = tabela
-
-
-Result.result()

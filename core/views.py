@@ -1,9 +1,11 @@
-from django.shortcuts import render, HttpResponse
-from .controller import Result
+from django.shortcuts import redirect, render, HttpResponse
+from .controller import Result, Estrategia
+from django.urls import reverse
 from .forms import SaveForm, SearchForm
 
 def index(request):
 
+    Result.result()
     result = Result.tabela_result
     filtro = SaveForm()
     response = []
@@ -25,3 +27,22 @@ def index(request):
     context = {'list':result, 'search':form, 'filter':filtro}
     
     return render(request, 'core/pages/index.html', context)
+
+def filter_FII(request):
+
+    estrategia = Estrategia(cotacao_minima=100)
+
+    Result.result()
+
+    form = SearchForm()
+    result = Result.tabela_result
+    filtro = SaveForm()
+    response = []
+
+    context = {'list':result, 'search':form, 'filter':filtro}
+
+    # Obtém a URL da view nova
+    url_nova = reverse('index') 
+
+    # Redireciona para a view nova com o novo contexto
+    return redirect(url_nova, context=context)

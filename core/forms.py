@@ -24,4 +24,4 @@ class SaveForm(forms.ModelForm):
         }
 
 class SearchForm(forms.Form):
-    query = forms.CharField(max_length=100, label=False)
+    query = forms.CharField(required=False, max_length=100, label=False)
