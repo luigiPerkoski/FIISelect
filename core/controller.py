@@ -131,9 +131,10 @@ class Result:
             list_cap_rate.append(element.cap_rate)
             list_vacancia.append(element.vacancia)
 
-        for chave, element in elementos.items():
-            max_result[f'{chave}'] = max(element)
-            min_result[f'{chave}'] = min(element)
+        if list_cotacao:
+            for chave, element in elementos.items():
+                max_result[f'{chave}'] = max(element)
+                min_result[f'{chave}'] = min(element)
         
 
 
