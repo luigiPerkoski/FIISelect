@@ -118,9 +118,9 @@ tr#header{
 .button button{
     width: 120px;
     height: 40px;
-    border-color: #eaec67;
+    border-color: black;
     border-radius: 4px;
-    background-color: #e9eb8e;
+    background-color: rgb(250, 204, 21);
     
 }
 

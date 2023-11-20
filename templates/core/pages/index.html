@@ -12,16 +12,9 @@
 </head>
 <body>
     <div class="contant">
-        <header>
-            <div id="index"><a href="{% url 'index' %}">Menu</a></div>
-            <div id="salvos">Salvos</div>
-            <div id="login">
-                <a href="">Login</a>
-            </div>
-        </header>
         <main>
             <div class="search-container">
-                <form method="post">
+                <form action="{% url 'index' %}" method="post">
                     {% csrf_token %}
                     {{search}}
                     <button type="Submit">Pesquisar</button>
